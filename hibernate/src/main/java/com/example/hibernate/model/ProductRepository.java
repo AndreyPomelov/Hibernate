@@ -1,6 +1,7 @@
 package com.example.hibernate.model;
 
 import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -16,11 +17,10 @@ import java.util.List;
 @Repository
 public class ProductRepository {
 
-    /** При старте приложения инициализируем entityManager через Factory */
-    EntityManagerFactory factory = new Configuration()
-            .configure("mysql.cfg.xml")
-            .buildSessionFactory();
-    EntityManager entityManager = factory.createEntityManager();
+    @Autowired
+    private EntityManagerFactory factory;
+    @Autowired
+    private EntityManager entityManager;
 
     /** Метод, возвращающий конкретный продукт по его ID */
     public Product findById(Long id) {

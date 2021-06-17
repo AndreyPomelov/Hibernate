@@ -42,7 +42,7 @@ public class Test {
         list.forEach(x -> System.out.println(x.getId() + " " + x.getTitle() + " " + x.getPrice()));
 
         // Тестируем метод deleteById
-        repository.deleteById(4L);
+        // repository.deleteById(5L);
 
         // Тестируем метод save
         Product product1 = new Product();
