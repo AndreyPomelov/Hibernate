@@ -20,6 +20,18 @@ public class ProductRepositoryImpl implements ProductRepository{
         this.entityManager = entityManager;
     }
 
+    /** Метод, возвращающий всех покупателей, купивших этот товар по его ID */
+    public List<String> findAllCustomersByProductId(Long id) {
+        entityManager.getTransaction().begin();
+        List<String> list = entityManager.createNativeQuery("select name from customers as cu " +
+                "join carts as ca on cu.id = ca.customer_id " +
+                "join products_carts as pc on ca.id = pc.cart_id " +
+                "join products as pr on pc.product_id = pr.id " +
+                "where pr.id = " + id + ";").getResultList();
+        entityManager.getTransaction().commit();
+        return list;
+    }
+
     /** Метод, возвращающий конкретный продукт по его ID */
     public Product findById(Long id) {
         entityManager.getTransaction().begin();
