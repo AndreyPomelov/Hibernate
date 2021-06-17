@@ -2,7 +2,7 @@ package com.example.hibernate.controller;
 
 
 import com.example.hibernate.model.Product;
-import com.example.hibernate.model.ProductRepository;
+import com.example.hibernate.model.ProductRepositoryImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,13 +21,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MainController {
 
     /** Ссылка на экземпляр класса, реализующий взаимодействие с БД */
-    private final ProductRepository repository;
+    private final ProductRepositoryImpl repository;
 
     /** Конструктор
      *
      * @param repository ссылка на экземпляр класса, реализующий взаимодействие с БД
      */
-    public MainController(ProductRepository repository) {
+    public MainController(ProductRepositoryImpl repository) {
         this.repository = repository;
     }
 

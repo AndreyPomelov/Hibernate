@@ -11,19 +11,19 @@ import java.util.List;
  *
  * @author Andrey Pomelov
  * @version 1.0-SNAPSHOT
- * @see ProductRepository
+ * @see ProductRepositoryImpl
  */
 @Component
 public class Test {
 
     /** Ссылка на класс, реализующий взаимодействие с БД */
-    private final ProductRepository repository;
+    private final ProductRepositoryImpl repository;
 
     /** Конструктор
      *
      * @param repository ссылка на класс, реализующий взаимодействие с БД
      */
-    public Test(ProductRepository repository) {
+    public Test(ProductRepositoryImpl repository) {
         this.repository = repository;
     }
 
