@@ -17,6 +17,9 @@ public class Cart {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "customer_id")
+    private Long customer_id;
+
     /** Связываем корзину с покупателем */
     @ManyToOne
     @JoinColumn(name = "customer_id")
@@ -54,5 +57,13 @@ public class Cart {
 
     public void setProducts(List<Product> products) {
         this.products = products;
+    }
+
+    public Long getCustomer_id() {
+        return customer_id;
+    }
+
+    public void setCustomer_id(Long customer_id) {
+        this.customer_id = customer_id;
     }
 }
