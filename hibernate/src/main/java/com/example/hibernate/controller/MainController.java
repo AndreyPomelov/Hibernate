@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-/** Класс-контролллер
+/** Класс-контролллер. Пока не работает.
  *
  * @author Andrey Pomelov
  * @version 1.0-SNAPSHOT

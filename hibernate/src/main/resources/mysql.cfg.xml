@@ -13,5 +13,7 @@
         <property name="show_sql">true</property>
 
         <mapping resource="Product.hbm.xml"></mapping>
+        <mapping resource="Customer.hbm.xml"></mapping>
+        <mapping resource="Cart.hbm.xml"></mapping>
     </session-factory>
 </hibernate-configuration>

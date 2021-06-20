@@ -7,6 +7,11 @@ import org.springframework.context.annotation.Configuration;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
+/** Класс конфигурации приложения
+ *
+ * @author Andrey Pomelov
+ * @version 1.0-SNAPSHOT
+ */
 @Configuration
 @ComponentScan("com.example.hibernate")
 public class Config {

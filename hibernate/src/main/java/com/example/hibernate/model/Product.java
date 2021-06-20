@@ -1,6 +1,7 @@
 package com.example.hibernate.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /** Класс, описывающий продукт, сохраняемый в БД
  *
@@ -25,6 +26,16 @@ public class Product {
     @Column(name = "price")
     private int price;
 
+    /** Соединяем продукт с корзиной
+     * Вот это поле почему-то всегда NULL!*/
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "products_carts",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "cart_id")
+    )
+    private List<Cart> carts;
+
     /** Далее - стандартные геттеры и сеттеры */
     public Long getId() {
         return id;
@@ -48,5 +59,13 @@ public class Product {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public List<Cart> getCarts() {
+        return carts;
+    }
+
+    public void setCarts(List<Cart> carts) {
+        this.carts = carts;
     }
 }

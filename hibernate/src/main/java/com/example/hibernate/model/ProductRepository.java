@@ -2,12 +2,17 @@ package com.example.hibernate.model;
 
 import java.util.List;
 
+/** Интерфейс для репозитория продуктов
+ *
+ * @author Andrey Pomelov
+ * @version 1.0-SNAPSHOT
+ */
 public interface ProductRepository {
 
     /** Метод, возвращающий конкретный продукт по его ID */
     public Product findById(Long id);
 
-    /** Метод, возвращающий все данные из БД */
+    /** Метод, возвращающий все данные из таблицы продуктов */
     public List<Product> findAll();
 
     /** Метод, удаляющий продукт из БД по его ID */
